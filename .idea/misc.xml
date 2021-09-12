@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.32395833333333335" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/animal_concat_row.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/animals_row.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/breeds_row.xml" value="0.30885416666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="true" project-jdk-name="13" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
