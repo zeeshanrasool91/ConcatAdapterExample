@@ -49,10 +49,10 @@ public class ProgressAppGlideModule extends AppGlideModule {
     }
 
     public static void forget(String url) {
-        ProgressAppGlideModule.DispatchingProgressListener.forget(url);
+        DispatchingProgressListener.forget(url);
     }
-    public static void expect(String url, ProgressAppGlideModule.UIonProgressListener listener) {
-        ProgressAppGlideModule.DispatchingProgressListener.expect(url, listener);
+    public static void expect(String url, UIonProgressListener listener) {
+        DispatchingProgressListener.expect(url, listener);
     }
 
     private interface ResponseProgressListener {
@@ -68,7 +68,7 @@ public class ProgressAppGlideModule extends AppGlideModule {
         float getGranualityPercentage();
     }
 
-    private static class DispatchingProgressListener implements ProgressAppGlideModule.ResponseProgressListener {
+    private static class DispatchingProgressListener implements ResponseProgressListener {
         private static final WeakHashMap<String, UIonProgressListener> LISTENERS = new WeakHashMap<>();
         private static final WeakHashMap<String, Long> PROGRESSES = new WeakHashMap<>();
 
