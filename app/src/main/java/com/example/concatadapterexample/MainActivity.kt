@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         animalAdapter.setAnimals(
             mutableListOf(
                 Animal("Dog", "DogImgUrl"),
-                Animal("Cat", "CatImgUrl"),
+                Animal("Cat", "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__480.jpg"),
                 Animal("Hamster", "HamsterImgUrl"),
                 Animal("Shark", "SharkImgUrl")
             )

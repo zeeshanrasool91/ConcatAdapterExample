@@ -35,16 +35,13 @@ public class ProgressAppGlideModule extends AppGlideModule {
     public void registerComponents(Context context, Glide glide, Registry registry) {
         super.registerComponents(context, glide, registry);
         OkHttpClient client = new OkHttpClient.Builder()
-                .addNetworkInterceptor(new Interceptor() {
-                    @Override
-                    public Response intercept(Interceptor.Chain chain) throws IOException {
-                        Request request = chain.request();
-                        Response response = chain.proceed(request);
-                        ResponseProgressListener listener = new DispatchingProgressListener();
-                        return response.newBuilder()
-                                .body(new OkHttpProgressResponseBody(request.url(), response.body(), listener))
-                                .build();
-                    }
+                .addNetworkInterceptor(chain -> {
+                    Request request = chain.request();
+                    Response response = chain.proceed(request);
+                    ResponseProgressListener listener = new DispatchingProgressListener();
+                    return response.newBuilder()
+                            .body(new OkHttpProgressResponseBody(request.url(), response.body(), listener))
+                            .build();
                 })
                 .build();
         registry.replace(GlideUrl.class, InputStream.class, new OkHttpUrlLoader.Factory(client));
