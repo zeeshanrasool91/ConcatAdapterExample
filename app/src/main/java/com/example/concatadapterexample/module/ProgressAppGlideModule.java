@@ -1,8 +1,10 @@
-package com.example.concatadapterexample;
+package com.example.concatadapterexample.module;
 
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+
+import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Registry;
@@ -16,7 +18,6 @@ import java.io.InputStream;
 import java.util.WeakHashMap;
 
 import okhttp3.HttpUrl;
-import okhttp3.Interceptor;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -32,7 +33,7 @@ import okio.Source;
 public class ProgressAppGlideModule extends AppGlideModule {
 
     @Override
-    public void registerComponents(Context context, Glide glide, Registry registry) {
+    public void registerComponents(@NonNull Context context, @NonNull Glide glide, @NonNull Registry registry) {
         super.registerComponents(context, glide, registry);
         OkHttpClient client = new OkHttpClient.Builder()
                 .addNetworkInterceptor(chain -> {
@@ -146,6 +147,7 @@ public class ProgressAppGlideModule extends AppGlideModule {
             return responseBody.contentLength();
         }
 
+        @NonNull
         @Override
         public BufferedSource source() {
             if (bufferedSource == null) {
@@ -159,7 +161,7 @@ public class ProgressAppGlideModule extends AppGlideModule {
                 long totalBytesRead = 0L;
 
                 @Override
-                public long read(Buffer sink, long byteCount) throws IOException {
+                public long read(@NonNull Buffer sink, long byteCount) throws IOException {
                     long bytesRead = super.read(sink, byteCount);
                     long fullLength = responseBody.contentLength();
                     if (bytesRead == -1) { // this source is exhausted

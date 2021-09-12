@@ -1,4 +1,4 @@
-package com.example.concatadapterexample
+package com.example.concatadapterexample.base.holder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

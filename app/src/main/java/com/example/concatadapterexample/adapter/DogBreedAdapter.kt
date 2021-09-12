@@ -1,9 +1,11 @@
-package com.example.concatadapterexample
+package com.example.concatadapterexample.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.concatadapterexample.model.Breed
+import com.example.concatadapterexample.base.holder.BaseViewHolder
 import com.example.concatadapterexample.databinding.BreedsRowBinding
 
 class DogBreedAdapter(

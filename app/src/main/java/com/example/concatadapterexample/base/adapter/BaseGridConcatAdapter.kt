@@ -1,10 +1,12 @@
-package com.example.concatadapterexample
+package com.example.concatadapterexample.base.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.concatadapterexample.adapter.AnimalAdapter
+import com.example.concatadapterexample.base.holder.BaseConcatHolder
 import com.example.concatadapterexample.databinding.AnimalConcatRowBinding
 
 class BaseGridConcatAdapter(private val context: Context, private val animalAdapter: AnimalAdapter, private val spanCount:Int) :

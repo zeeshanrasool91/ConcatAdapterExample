@@ -1,12 +1,15 @@
-package com.example.concatadapterexample
+package com.example.concatadapterexample.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.request.RequestOptions
+import com.example.concatadapterexample.model.Animal
+import com.example.concatadapterexample.module.GlideImageLoader
+import com.example.concatadapterexample.R
+import com.example.concatadapterexample.base.holder.BaseViewHolder
 import com.example.concatadapterexample.databinding.AnimalsRowBinding
 
 
@@ -50,7 +53,7 @@ class AnimalAdapter(private val context: Context) : RecyclerView.Adapter<BaseVie
     }
 
     inner class AnimalViewHolder(private val binding: AnimalsRowBinding) : BaseViewHolder<Animal>(binding.root){
-        override fun bind(item: Animal,position:Int) {
+        override fun bind(item: Animal, position:Int) {
 
             val options: RequestOptions = RequestOptions()
                 .centerCrop()

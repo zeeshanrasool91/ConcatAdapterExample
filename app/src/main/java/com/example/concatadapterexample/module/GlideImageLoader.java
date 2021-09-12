@@ -1,9 +1,8 @@
-package com.example.concatadapterexample;
+package com.example.concatadapterexample.module;
 
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -38,7 +37,6 @@ public class GlideImageLoader {
             public void onProgress(long bytesRead, long expectedLength) {
                 if (mProgressBar != null) {
                     mProgressBar.setProgress((int) (100 * bytesRead / expectedLength));
-                    Log.d("ABCD", "onProgress: " + (int) (100 * bytesRead / expectedLength) + "--");
                 }
             }
 

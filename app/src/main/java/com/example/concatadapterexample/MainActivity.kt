@@ -4,7 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.concatadapterexample.adapter.AnimalAdapter
+import com.example.concatadapterexample.adapter.DogBreedAdapter
+import com.example.concatadapterexample.base.adapter.BaseGridConcatAdapter
 import com.example.concatadapterexample.databinding.ActivityMainBinding
+import com.example.concatadapterexample.model.Animal
+import com.example.concatadapterexample.model.Breed
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,10 +23,10 @@ class MainActivity : AppCompatActivity() {
         val animalAdapter = AnimalAdapter(this)
         animalAdapter.setAnimals(
             mutableListOf(
-                Animal("Dog", "DogImgUrl"),
+                Animal("Dog", "https://img.wallpapersafari.com/desktop/728/410/19/58/2zT4A9.jpg"),
                 Animal("Cat", "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__480.jpg"),
-                Animal("Hamster", "HamsterImgUrl"),
-                Animal("Shark", "SharkImgUrl")
+                Animal("Hamster", "https://img.wallpapersafari.com/phone/1440/2560/12/25/bXKvL1.jpg"),
+                Animal("Shark", "https://img.wallpapersafari.com/phone/1440/2560/19/54/VBsPI0.jpg")
             )
         )
 
